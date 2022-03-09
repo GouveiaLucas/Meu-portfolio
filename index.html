@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Lucas Gouveia - Portfolio</title>
+
+    <script language="JavaScript">
+      function desabilitar() {
+        alert('Função desabilitada. \n\nDesculpe o incômodo.')
+        return false
+      }
+      document.oncontextmenu = desabilitar
+    </script>
+  </head>
+  <body>
+    
+    <header>
+      <!-- logo e menu superior -->
+      <nav>
+      <div class="top">
+        <div class="logo">
+          <a href="#"
+            ><img src="assets/meu-portfolio.svg" alt="meu portfólio"
+          /></a>
+        </div>
+        <div id="menu" class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#trabalhos">TRABALHOS</a></li>
+            <li><a href="#contact">CONTATO</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+      <!-- conteúdo principal do cabeçalho -->
+      <div class="principal">
+        <div class="image">
+          <img
+            id="star-night"
+            src="assets/star-night.png"
+            alt="background noite estrelada"
+          />
+        </div>
+        <!-- meu nome -->
+        <div class="content">
+          <div>
+            <h2 id="h2">Me chamo Lucas. Esse é meu portfólio de arte.</h2>
+          </div>
+          <div class="ver-mais-icon">
+            <a href="#grid"><i class="fa-solid fa-angle-down"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- TRABALHO -->
+    <section id="trabalhos" class="trabalho">
+      <div id="grid" class="cards grid">
+        <div class="card">
+          <i class="fa-solid fa-palette"></i>
+          <h3 class="title">Desenhos e ilustrações</h3>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-d"></i>
+          <h3 class="title">Design</h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-house"></i>
+          <h3 class="title">Archviz</h3>
+        </div>
+      </div>
+      <!-- FOTOS -->
+      <main>
+        <!-- MODAL -->
+
+        <div class="modal">
+          <div class="modal_content">
+            <img src="assets/4.jpg" alt="" id="modal_img" />
+          </div>
+          <span id="bt_close">&times;</span>
+        </div>
+
+        <!-- MODAL -->
+
+        <div class="fotos">
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/3.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/4.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/5.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/6.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/7.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/8.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/9.png" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/1.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+          <div class="popup">
+            <a
+              ><img class="small-img" src="assets/2.jpg" alt="Imagem portfolio"
+            /></a>
+          </div>
+        </div>
+      </main>
+    </section>
+    <div class="divider"></div>
+     <!-- CONTATO -->
+
+     <section id="contact">
+      <div class="container">
+        <div class="text">
+          <p class="title">Entre em contato</p>
+          <p class="msg">
+            Entre em contato comigo pelo whatsapp para obter maiores informações.
+          </p>
+          <a
+            href="https://wa.me/+5543998396989"
+            target="_blank"
+            class="button"
+            ><i class="fa-brands fa-whatsapp"></i>Entrar em contato</a
+          >
+        </div>
+
+        <div class="links">
+          <ul class="grids">
+            <li><i class="fa-solid fa-phone"></i>(43) 99983 - 1400</li>
+           
+        </div>
+      </div>
+    </section>
+    
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="top footer">
+    <div class="logo">
+      <a href="#"
+        ><img src="assets/meu-portfolio.svg" alt="meu portfólio"
+      /></a>
+    </div>
+    <div class="mensagem">
+      <p>
+        Todos os direitos reservados a &copy; Lucas Gouveia
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+
+    
+
+
+    <!-- WHATSAPP FIXO-->
+    <div class="whatsapp">
+      <a href="https://wa.me/+5543998396989" target="_blank"
+        ><i class="fa-brands fa-whatsapp-square"></i
+      ></a>
+    </div>
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/043a5bed24.js"
+      crossorigin="anonymous"
+    ></script>
+
+    
+  </body>
+</html>
+
+
+

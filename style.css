@@ -1,0 +1,496 @@
+* {
+  overflow-x: hidden;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  text-decoration-line: none;
+  color: inherit;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+
+body {
+  max-width: 100%;
+}
+
+label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+textarea {
+  resize: none;
+  height: 20rem;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+
+  outline: 0;
+}
+/******************* BASE ************************/
+html {
+  scroll-behavior: smooth;
+}
+
+/* VARIAVEIS */
+:root {
+  --top-color: rgb(241, 245, 247);
+  --box-color: rgb(230, 230, 230);
+
+  /* FONTS */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+  --title-fonts: 'Poppins', sans-serif;
+
+  --menu-fonts: 'Hubballi', sans-serif;
+}
+
+/* LOGO E MENU SUPERIOR */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  background: var(--top-color);
+  padding: 0 20%;
+
+  align-items: center;
+  flex-wrap: wrap;
+}
+.top .logo {
+  text-align: left;
+}
+.top .menu ul {
+  justify-content: right;
+  display: flex;
+}
+.top .menu ul li {
+  margin: 0 1rem;
+  font: 1.3rem var(--menu-fonts);
+}
+
+.top .logo img {
+  height: 3rem;
+  width: auto;
+  max-width: 100%;
+}
+
+/* CONTEÚDO PRINCIPAL DO CABEÇALHO */
+header {
+  box-shadow: 0px 0px 12px rgb(48, 47, 53);
+}
+.principal {
+  display: grid;
+  background: rgb(48, 47, 53);
+  width: 100%;
+  align-items: center;
+  padding: 1px;
+}
+.principal .image {
+  overflow: hidden;
+}
+
+.principal img {
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  opacity: 15%;
+}
+/* meu nome */
+.principal .content {
+  z-index: 3;
+  padding: 1% 3% 0 3%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 35rem;
+  margin-bottom: -10%;
+  position: absolute;
+  background: var(--box-color);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.principal .content h2 {
+  text-align: center;
+  font: 700 3.5rem var(--title-fonts);
+  color: rgb(56, 56, 56);
+}
+h2::after {
+  content: '|';
+  margin-left: 10px;
+  opacity: 1;
+  animation: pisca 0.7s infinite;
+}
+
+@keyframes pisca {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.ver-mais-icon i {
+  font-size: 7rem;
+  color: rgb(56, 56, 56);
+}
+
+/* TRABALHOS */
+.trabalho {
+  background: rgba(24, 100, 214, 0.034);
+}
+.cards.grid {
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5rem 0;
+}
+
+.card {
+  max-width: 100%;
+  width: 15rem;
+  padding: 2rem 4rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.205);
+  border-bottom: 0.25rem solid rgb(48, 47, 53);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+  background: rgb(255, 255, 255);
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: rgb(48, 47, 53);
+}
+
+.card .title {
+  /* font-size: 1.5rem; */
+  margin-bottom: 0.75rem;
+  font: 400 1rem var(--title-fonts);
+}
+
+/* galeria de imagens */
+
+.fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 7.5rem;
+}
+
+div.popup {
+  height: 100vh;
+  width: auto;
+  overflow: hidden;
+
+  align-items: center;
+  text-align: center;
+}
+div.popup img {
+  width: 33vw;
+  height: 100vh;
+  object-fit: cover;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.fotos .popup a img:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+div.modal {
+  display: none;
+  overflow: hidden;
+}
+
+div.active {
+  top: 0;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  background: hsla(221, 20%, 19%, 0.795);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+div.active .modal_content img {
+  display: flex;
+  width: auto;
+  height: 90vh;
+  max-height: 100vh;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+#bt_close {
+  color: var(--box-color);
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* contato */
+
+#contact .container {
+  display: flex;
+  /* gap: 20%; */
+  align-items: center;
+
+  justify-content: flex-start;
+
+  width: 100%;
+  background: var(--top-color);
+  padding: 7.5rem 20% 15rem 20%;
+
+  flex-wrap: wrap;
+}
+
+.text .title {
+  font: 700 3rem var(--title-fonts);
+}
+
+.text .msg {
+  width: 70%;
+  margin: 2rem 0;
+  font: 400 1.1rem var(--title-fonts);
+}
+
+.text .button {
+  background-color: rgb(48, 47, 53);
+  color: var(--top-color);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 700 1rem var(--title-fonts);
+  transition: background 0.3s;
+}
+.text .button i,
+.grids i {
+  font-size: 1.25rem;
+  margin-right: 0.625rem;
+}
+
+text .button:hover {
+  background: var(--base-color-alt);
+}
+
+.links .grids {
+  width: 100%;
+  margin: 2rem 0;
+  font: 400 1.1rem var(--title-fonts);
+}
+.divider {
+  height: 1px;
+  background: rgb(48, 47, 53);
+}
+
+/* footer */
+footer {
+  background: rgba(213, 225, 231, 0.596);
+}
+.footer {
+  align-items: center;
+  margin: 2rem;
+  background: none;
+}
+.top .mensagem {
+  justify-content: right;
+  display: flex;
+}
+.top .mensagem p {
+  margin: 0 1rem;
+  font: 1.3rem var(--menu-fonts);
+}
+/* WHATSAPP FIXO */
+.whatsapp {
+  position: fixed;
+
+  height: auto;
+  width: 10rem;
+  bottom: 2rem;
+  right: 0;
+  overflow: hidden;
+}
+.whatsapp i {
+  font-size: 4rem;
+  color: rgb(56, 56, 56);
+  max-width: 100%;
+}
+
+/*  */
+/*  */
+/*  */
+/* RESPONSIVO */
+/*  */
+/*  */
+/*  */
+/*  */
+/*========= MEDIA QUERIES =========*/
+/* extra large devices: 1200  ou mais */
+/* large devices: 992 ou mais e menos de 1200*/
+/* medium: 768 ou mais e menos de 992 */
+/* small devices: 767 ou menos */
+
+@media (max-width: 767px) {
+  .principal .content h2 {
+    font-size: 1.8rem;
+  }
+  /* menu */
+
+  .top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .top .menu ul {
+    /* justify-content: right; */
+    display: flex;
+    flex-direction: row;
+
+    overflow: hidden;
+  }
+  .top .menu ul li {
+    margin: 0 1rem;
+    font: 1rem var(--menu-fonts);
+  }
+
+  .top .logo img {
+    height: 3rem;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .ver-mais-icon i {
+    font-size: 2rem;
+  }
+  /* trabalhos */
+  .card {
+    max-width: 100%;
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .card i {
+    font-size: 2rem;
+  }
+
+  .card .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  /* galeria de imagens */
+
+  .fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  div.popup {
+    height: 50vh;
+    align-items: center;
+    text-align: center;
+  }
+  div.popup img {
+    margin: 0.1rem;
+    width: 20rem;
+  }
+  /* WHATSAPP FIXO */
+  .whatsapp {
+    width: 4rem;
+  }
+  .whatsapp i {
+    font-size: 3rem;
+  }
+  /* footer */
+
+  .footer {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* MEDIUM devices */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .principal .content h2 {
+    font-size: 2.5rem;
+  }
+  .ver-mais-icon i {
+    font-size: 4rem;
+  }
+
+  /* TRABALHOS */
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .card i {
+    font-size: 2.5rem;
+  }
+
+  .card .title {
+    font-size: 1rem;
+  }
+
+  /* menu */
+
+  /* WHATSAPP FIXO */
+  .whatsapp {
+    width: 4rem;
+  }
+  .whatsapp i {
+    font-size: 3rem;
+  }
+  /* footer */
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* MENU MOBILE */
+
+  /* MENU MOBILE */
+}
